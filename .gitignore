@@ -1,5 +1,5 @@
 # test code
 test*.cpp
 
-# .exe
 *.exe
+.vscode/
