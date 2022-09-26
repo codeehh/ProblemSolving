@@ -52,20 +52,16 @@ int main(void) {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    while (true) {
-        cin >> n;
-        if (n == 0)
-            break;
-        for (int i = 0; i < n; i++) {
-            cin >> arr[i];
-        }
-        int h = (int)ceil(log2(n));
-        int treeSize = (1 << (h + 1));
-        segTree.clear();
-        segTree.resize(treeSize);
-        makeSegTree(1, 0, n - 1);
-        cout << solve(0, n - 1) << '\n';
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
+    int h = (int)ceil(log2(n));
+    int treeSize = (1 << (h + 1));
+    segTree.clear();
+    segTree.resize(treeSize);
+    makeSegTree(1, 0, n - 1);
+    cout << solve(0, n - 1) << '\n';
 
     return 0;
 }
